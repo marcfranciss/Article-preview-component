@@ -1,0 +1,14 @@
+.article-preview_img {
+  overflow: hidden;
+  border-radius: 10px 0 0 10px;
+}
+
+@media (max-width: 30rem) {
+  .article-preview_img {
+    max-height: 200px;
+    border-radius: 10px 10px 0 0;
+    img {
+      object-fit: contain;
+    }
+  }
+}

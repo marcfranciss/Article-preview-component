@@ -1,0 +1,36 @@
+.article-author {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  animation: showIn 1.3s linear;
+
+  .author_img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    overflow: hidden;
+  }
+  .author-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    span.author_fullname {
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 20px;
+      letter-spacing: 0.12px;
+      color: var(--dark-gray);
+    }
+    span.date_posted {
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 20px;
+      letter-spacing: 0.12px;
+      color: var(--light-gray);
+    }
+  }
+}
