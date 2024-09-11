@@ -3,7 +3,6 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  animation: showIn 1.3s linear;
 
   .author_img {
     width: 40px;

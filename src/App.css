@@ -14,6 +14,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+:focus {
+  outline: 2px solid invert(50%);
+}
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
@@ -21,7 +24,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--dark-white);
+  background-color: hsl(210, 46%, 95%);
   font-family: "Manrope", system-ui;
 }
 
@@ -63,7 +66,7 @@ main {
   justify-content: space-between;
   margin-inline: 2.5rem;
 
-  button#shareBtn {
+  button.share-btn {
     outline: none;
     border: none;
     width: 2rem;
@@ -83,14 +86,14 @@ main {
   position: relative;
 }
 .share-nav {
-  display: none;
+  display: flex;
   flex-direction: row;
   align-items: center;
   max-width: 248px;
-  /* padding: 1rem 36px; */
   background-color: var(--dark-gray);
   border-radius: 10px;
-  animation: unHide 0.4s linear;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
 }
 .share-nav.bubble {
   position: absolute;
@@ -121,19 +124,12 @@ span.share-text {
   margin-right: 21px;
 }
 
-button#shareBtn:hover,
-button#shareBtn.active {
+button.share-btn:hover,
+button.share-btn.active {
   background-color: var(--light-gray) !important;
   svg path {
     fill: var(--light-white);
   }
-}
-
-.share-nav.bubble.active {
-  display: flex;
-}
-.share-nav.mobile {
-  width: 100%;
 }
 
 @media (max-width: 64rem) {
@@ -163,31 +159,21 @@ button#shareBtn.active {
   .article-author-container.mobile {
     display: flex;
     padding-block: 1rem;
+    transition: all 0.4s ease-out;
   }
   .article-author-container.mobile.active {
     background-color: var(--dark-gray);
     border-radius: 0 0px 10px 10px;
   }
   .share-nav.mobile {
-    display: flex;
+    opacity: 1;
     min-height: 2.5rem;
   }
 }
 
-@keyframes unHide {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.fadeOut {
+  opacity: 0;
 }
-
-@keyframes showIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.fadeIn {
+  opacity: 1;
 }

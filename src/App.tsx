@@ -17,15 +17,11 @@ function App() {
           <div className='article-author-container'>
             <ArticleAuthor />
             <div className='btn-container'>
-              <div
-                className={`share-nav bubble ${toggleShare ? "active" : ""}`}>
-                <span className='share-text'>SHARE</span>
-                <Socials />
-              </div>
               <button
-                id='shareBtn'
-                className={toggleShare ? "active" : ""}
-                onClick={() => setToggleShare(!toggleShare)}>
+                className={`share-btn ${toggleShare ? "active" : ""}`}
+                onClick={() => setToggleShare(!toggleShare)}
+                aria-label='Share button'
+                tabIndex={0}>
                 <svg xmlns='http://www.w3.org/2000/svg' width='15' height='13'>
                   <path
                     fill='#6E8098'
@@ -33,6 +29,15 @@ function App() {
                   />
                 </svg>
               </button>
+              {toggleShare && (
+                <div
+                  className={`share-nav bubble ${
+                    toggleShare ? "fadeIn" : "fadeOut"
+                  }`}>
+                  <span className='share-text'>SHARE</span>
+                  <Socials />
+                </div>
+              )}
             </div>
           </div>
           <div
@@ -42,16 +47,19 @@ function App() {
             {!toggleShareMobile ? (
               <ArticleAuthor />
             ) : (
-              <div className={`share-nav mobile`}>
+              <div
+                className={`share-nav mobile ${
+                  toggleShareMobile ? "active" : ""
+                }`}>
                 <span className='share-text'>SHARE</span>
                 <Socials />
               </div>
             )}
             <div className='btn-container'>
               <button
-                id='shareBtn'
-                className={toggleShare ? "active" : ""}
-                onClick={() => setToggleShareMobile(!toggleShareMobile)}>
+                className={`share-btn ${toggleShareMobile ? "active" : ""}`}
+                onClick={() => setToggleShareMobile(!toggleShareMobile)}
+                aria-label='Share button'>
                 <svg xmlns='http://www.w3.org/2000/svg' width='15' height='13'>
                   <path
                     fill='#6E8098'
