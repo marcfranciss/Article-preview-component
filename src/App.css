@@ -93,7 +93,7 @@ main {
   background-color: var(--dark-gray);
   border-radius: 10px;
   opacity: 0;
-  transition: opacity 0.4s ease-out;
+  transition: all 0.4s ease-out;
 }
 .share-nav.bubble {
   position: absolute;
@@ -173,7 +173,9 @@ button.share-btn.active {
 
 .fadeOut {
   opacity: 0;
+  visibility: hidden;
 }
 .fadeIn {
   opacity: 1;
+  visibility: visible;
 }

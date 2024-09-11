@@ -11,6 +11,7 @@ function App() {
   return (
     <main>
       <section id='article-preview' className='article-preview'>
+        <h1 style={{ visibility: "hidden" }}></h1>
         <ArticleImg />
         <article className='article-container'>
           <ArticleContent />
@@ -29,15 +30,13 @@ function App() {
                   />
                 </svg>
               </button>
-              {toggleShare && (
-                <div
-                  className={`share-nav bubble ${
-                    toggleShare ? "fadeIn" : "fadeOut"
-                  }`}>
-                  <span className='share-text'>SHARE</span>
-                  <Socials />
-                </div>
-              )}
+              <div
+                className={`share-nav bubble ${
+                  toggleShare ? "fadeIn" : "fadeOut"
+                }`}>
+                <span className='share-text'>SHARE</span>
+                <Socials />
+              </div>
             </div>
           </div>
           <div
